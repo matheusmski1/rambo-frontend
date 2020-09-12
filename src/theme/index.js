@@ -22,6 +22,8 @@ const theme = createMuiTheme({
         },
         a: {
           textDecoration: "none",
+          fontSize: '1.2rem',
+          color: '#7CA9FF'
         },
         "::-webkit-scrollbar": {
           width: 8,
