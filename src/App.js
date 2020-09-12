@@ -1,11 +1,8 @@
 import React from "react";
-import Login from "./components/LoginComponent/Login";
+import MainRoutes from "common/MainRoutes";
 
 function App() {
-  return <>
-  <Login></Login>
-  
-  </>;
+  return <MainRoutes />;
 }
 
 export default App;
