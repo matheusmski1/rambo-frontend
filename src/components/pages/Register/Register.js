@@ -1,73 +1,52 @@
-import React from 'react';
-import './Register.css';
-export default function Login() {
+import React, { useState } from "react";
+import Input from "../../common/Input";
+import "./Register.css";
 
-return (
+export default function Login({ fieldValue, handleChange, label }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [institutionKey, setInstitutionKey] = useState("");
 
-<div className="registre--tudo">
+  const handleChangeFirstName = (event) => setFirstName(event.target.value);
+  const handleChangeLastName = (event) => setLastName(event.target.value);
+  const handleChangeEmail = (event) => setEmail(event.target.value);
+  const handleChangePassword = (event) => setPassword(event.target.value);
+  const handleChangeInstitutionKey = (event) =>
+    setInstitutionKey(event.target.value);
 
-      <div className="registre--cadastrese">
-        <h2>Cadastre-se</h2>
-      </div>
-      <div className="login--credenciais">
-
-        <input
-          name='firstname'
-          placeholder='Primeiro Nome' />
-        <br></br>
-
-        <input
-          name='lastname'
-          placeholder='Sobrenome'/>
-        <br></br>
-
-        <input
-          name='email'
-          placeholder='Endereco de e-mail'/>
-        <br></br>
-
-        <input
-          name='password'
-          placeholder='Senha'/>
-        <br></br>
-
-        <input
-          name='passoword-repeat'
-          placeholder='Repetir senha'/>
-        <br></br>
-
-        <input
-          name='institutionkey'
-          placeholder='Chave da instituicao'/>
-        <br></br>
-
-        <button type="submit">
-        Continuar com Cadastro
-        </button>
-        
-
-
-
-      </div>
-
-
-      <div className="register--backtologin">
-        <div className="login--href1">
-          <a href ="">Ja possuo uma conta, desejo entrar</a>
+  return (
+    <>
+      <div className="register">
+        <div className="credenciais">
+          <Input
+            label={"Primeiro Nome"}
+            fieldValue={firstName}
+            handleChange={handleChangeFirstName}
+          ></Input>
+          <Input
+            label={"Sobrenome"}
+            fieldValue={lastName}
+            handleChange={handleChangeLastName}
+          ></Input>
+          <Input
+            label={"E-mail"}
+            fieldValue={email}
+            handleChange={handleChangeEmail}
+          ></Input>
+          <Input
+            label={"Senha"}
+            fieldValue={password}
+            handleChange={handleChangePassword}
+          ></Input>
+          <Input
+            label={"Chave da Instituicao"}
+            fieldValue={institutionKey}
+            handleChange={handleChangeInstitutionKey}
+          ></Input>
         </div>
       </div>
-
-</div>
-)
-
-
-
-
-
-
-
-
-
-
-
+    </>
+  );
 }
