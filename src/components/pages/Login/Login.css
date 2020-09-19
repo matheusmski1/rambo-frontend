@@ -1,11 +1,3 @@
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: Poppins;
-}
-
 .login {
   width: 40em;
   margin: 0 auto;

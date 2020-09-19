@@ -1,10 +1,10 @@
 import React from "react";
-import "./Input.css";
+import "./InputPassword.css";
 
 export default function Input({ label, fieldValue, handleChange }) {
   return (
     <div className="input">
-      <input type="text" value={fieldValue} onChange={handleChange} required />
+      <input type="password" id="password" />
       <span className="barra"></span>
       <label>{label}</label>
     </div>

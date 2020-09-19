@@ -1,52 +1,37 @@
-import React, { useState } from "react";
-import Input from "../../common/Input";
-import "./Register.css";
+import React from "react";
+import RegisterView from "./RegisterView";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
-export default function Login({ fieldValue, handleChange, label }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [institutionKey, setInstitutionKey] = useState("");
+const Register = () => {
+  const form = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      passwordConfirm: "",
+      institutionKey: "",
+    },
+    validationSchema: Yup.object().shape({
+      firstName: Yup.string().required("Este campo é obrigatório."),
+      lastName: Yup.string().required("Este campo é obrigatório."),
+      email: Yup.string()
+        .email("Email deve ser válido.")
+        .required("Este campo é obrigatório."),
+      password: Yup.string().required("Este campo é obrigatório."),
+      passwordConfirm: Yup.string()
+        .required("Este campo é obrigatório.")
+        .oneOf([Yup.ref("password")], "As senhas não coincidem"),
+      institutionKey: Yup.string().required("Este campo é obrigatório."),
+    }),
+    onSubmit: (values, { resetForm }) => {
+      resetForm();
 
-  const handleChangeFirstName = (event) => setFirstName(event.target.value);
-  const handleChangeLastName = (event) => setLastName(event.target.value);
-  const handleChangeEmail = (event) => setEmail(event.target.value);
-  const handleChangePassword = (event) => setPassword(event.target.value);
-  const handleChangeInstitutionKey = (event) =>
-    setInstitutionKey(event.target.value);
+      console.log(values);
+    },
+  });
 
-  return (
-    <>
-      <div className="register">
-        <div className="credenciais">
-          <Input
-            label={"Primeiro Nome"}
-            fieldValue={firstName}
-            handleChange={handleChangeFirstName}
-          ></Input>
-          <Input
-            label={"Sobrenome"}
-            fieldValue={lastName}
-            handleChange={handleChangeLastName}
-          ></Input>
-          <Input
-            label={"E-mail"}
-            fieldValue={email}
-            handleChange={handleChangeEmail}
-          ></Input>
-          <Input
-            label={"Senha"}
-            fieldValue={password}
-            handleChange={handleChangePassword}
-          ></Input>
-          <Input
-            label={"Chave da Instituicao"}
-            fieldValue={institutionKey}
-            handleChange={handleChangeInstitutionKey}
-          ></Input>
-        </div>
-      </div>
-    </>
-  );
-}
+  return <RegisterView {...{ form }} />;
+};
+export default Register;
