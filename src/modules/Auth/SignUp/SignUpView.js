@@ -19,7 +19,7 @@ const SingUpView = ({ form }) => {
           alignContent="center"
           style={{ minHeight: "100vh" }}
         >
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <Typography variant="h3" align="center">
               Cadastre-se
             </Typography>

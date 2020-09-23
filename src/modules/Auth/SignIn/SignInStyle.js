@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
     backgroundColor: "blue",
   },
+  allContent: {
+    padding: [250],
+  },
 }));
 
 export default useStyles;
