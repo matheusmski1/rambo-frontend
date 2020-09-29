@@ -5,6 +5,7 @@ import React from "react";
 import useStyles from "./SignUpStyle";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 const SingUpView = ({ form }) => {
   const classes = useStyles();
@@ -25,7 +26,7 @@ const SingUpView = ({ form }) => {
             </Typography>
             <hr className={classes.hr} />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={10}>
             <Grid container spacing={4}>
               <Grid item xs={6}>
                 <TextField
@@ -51,7 +52,7 @@ const SingUpView = ({ form }) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={10}>
             <TextField
               label="Endereço de e-mail"
               fullWidth
@@ -62,7 +63,7 @@ const SingUpView = ({ form }) => {
               helperText={form.errors.email}
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={10}>
             <Grid container spacing={4}>
               <Grid item xs={6}>
                 <TextField
@@ -88,7 +89,7 @@ const SingUpView = ({ form }) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={10}>
             <TextField
               label="Chave de instituição"
               fullWidth
@@ -99,10 +100,24 @@ const SingUpView = ({ form }) => {
               helperText={form.errors.institutionKey}
             />
           </Grid>
-          <Grid item xs={12}>
-            <Button color="primary" variant="contained" type="submit">
-              Salvar
-            </Button>
+
+          <Grid>
+            <Grid item xs={12}>
+              <Button color="primary" variant="contained" type="submit">
+                Continuar com o Registro
+              </Button>
+            </Grid>
+            <Grid>
+              <Grid
+                item
+                x={12}
+                style={{ paddingTop: "0.1em", paddingRight: "3em" }}
+              >
+                <Typography variant="h4">
+                  <Link>Ja possuo uma conta, desejo entrar.</Link>
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </form>
