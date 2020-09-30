@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const SingUp = () => {
-  const form = useFormik({
+  const formik = useFormik({
     initialValues: {
       firstName: "",
       lastName: "",
@@ -32,6 +32,6 @@ const SingUp = () => {
     },
   });
 
-  return <SignUpView {...{ form }} />;
+  return <SignUpView {...{ formik }} />;
 };
 export default SingUp;

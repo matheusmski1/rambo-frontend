@@ -1,17 +1,15 @@
 import React from "react";
-import SignInView from "./SignInView";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import RecoveryAuthView from "./RecoveryAuthView";
 
-const SingIn = () => {
+const RecoveryAuth = () => {
   const formik = useFormik({
     initialValues: {
-      login: "",
-      password: "",
+      email: "",
     },
     validationSchema: Yup.object().shape({
-      login: Yup.string().required("Este campo é obrigatório."),
-      password: Yup.string().required("Este campo é obrigatório."),
+      verificationCode: Yup.string().required("Este campo é obrigatório."),
     }),
     onSubmit: (values, { resetForm }) => {
       resetForm();
@@ -20,6 +18,6 @@ const SingIn = () => {
     },
   });
 
-  return <SignInView {...{ formik }} />;
+  return <RecoveryAuthView {...{ formik }} />;
 };
-export default SingIn;
+export default RecoveryAuth;

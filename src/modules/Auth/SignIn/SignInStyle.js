@@ -9,10 +9,10 @@ const useStyles = makeStyles((theme) => ({
     height: 2,
     margin: 0,
     flexShrink: 0,
-    backgroundColor: "blue",
+    backgroundColor: "#0058A9",
   },
-  allContent: {
-    padding: [250],
+  forgotBox: {
+    display: "flex",
   },
 }));
 

@@ -7,12 +7,12 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 
-const SingUpView = ({ form }) => {
+const SingUpView = ({ formik }) => {
   const classes = useStyles();
 
   return (
     <Container maxWidth="md">
-      <form className={classes.form} onSubmit={form.handleSubmit}>
+      <form className={classes.form} onSubmit={formik.handleSubmit}>
         <Grid
           container
           spacing={3}
@@ -33,10 +33,10 @@ const SingUpView = ({ form }) => {
                   label="Primeiro nome"
                   fullWidth
                   name="firstName"
-                  value={form.values.firstName}
-                  onChange={form.handleChange}
-                  error={!!form.errors.firstName}
-                  helperText={form.errors.firstName}
+                  value={formik.values.firstName}
+                  onChange={formik.handleChange}
+                  error={!!formik.errors.firstName}
+                  helperText={formik.errors.firstName}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -44,10 +44,10 @@ const SingUpView = ({ form }) => {
                   label="Sobrenome"
                   fullWidth
                   name="lastName"
-                  value={form.values.lastName}
-                  onChange={form.handleChange}
-                  error={!!form.errors.lastName}
-                  helperText={form.errors.lastName}
+                  value={formik.values.lastName}
+                  onChange={formik.handleChange}
+                  error={!!formik.errors.lastName}
+                  helperText={formik.errors.lastName}
                 />
               </Grid>
             </Grid>
@@ -57,10 +57,10 @@ const SingUpView = ({ form }) => {
               label="Endereço de e-mail"
               fullWidth
               name="email"
-              value={form.values.email}
-              onChange={form.handleChange}
-              error={!!form.errors.email}
-              helperText={form.errors.email}
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={!!formik.errors.email}
+              helperText={formik.errors.email}
             />
           </Grid>
           <Grid item xs={10}>
@@ -70,10 +70,10 @@ const SingUpView = ({ form }) => {
                   label="Senha"
                   fullWidth
                   name="password"
-                  value={form.values.password}
-                  onChange={form.handleChange}
-                  error={!!form.errors.password}
-                  helperText={form.errors.password}
+                  value={formik.values.password}
+                  onChange={formik.handleChange}
+                  error={!!formik.errors.password}
+                  helperText={formik.errors.password}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -81,10 +81,10 @@ const SingUpView = ({ form }) => {
                   label="Confirmação de Senha"
                   fullWidth
                   name="passwordConfirm"
-                  value={form.values.passwordConfirm}
-                  onChange={form.handleChange}
-                  error={!!form.errors.passwordConfirm}
-                  helperText={form.errors.passwordConfirm}
+                  value={formik.values.passwordConfirm}
+                  onChange={formik.handleChange}
+                  error={!!formik.errors.passwordConfirm}
+                  helperText={formik.errors.passwordConfirm}
                 />
               </Grid>
             </Grid>
@@ -94,31 +94,20 @@ const SingUpView = ({ form }) => {
               label="Chave de instituição"
               fullWidth
               name="institutionKey"
-              value={form.values.institutionKey}
-              onChange={form.handleChange}
-              error={!!form.errors.institutionKey}
-              helperText={form.errors.institutionKey}
+              value={formik.values.institutionKey}
+              onChange={formik.handleChange}
+              error={!!formik.errors.institutionKey}
+              helperText={formik.errors.institutionKey}
             />
           </Grid>
-
-          <Grid>
-            <Grid item xs={12}>
-              <Button color="primary" variant="contained" type="submit">
-                Continuar com o Registro
-              </Button>
-            </Grid>
-            <Grid>
-              <Grid
-                item
-                x={12}
-                style={{ paddingTop: "0.1em", paddingRight: "3em" }}
-              >
-                <Typography variant="h4">
-                  <Link>Ja possuo uma conta, desejo entrar.</Link>
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
+          <div className={classes.boxSubmit}>
+            <Button color="primary" variant="contained" type="submit">
+              Continuar com o Registro
+            </Button>
+            <Typography variant="h4" align="center">
+              <Link to="/auth/sign-in">Ja possuo uma conta, desejo entrar</Link>
+            </Typography>
+          </div>
         </Grid>
       </form>
     </Container>

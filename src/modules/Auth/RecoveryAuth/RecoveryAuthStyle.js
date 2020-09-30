@@ -11,10 +11,6 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
     backgroundColor: "#0058A9",
   },
-  boxSubmit: {
-    display: "flex",
-    flexDirection: "column",
-  },
 }));
 
 export default useStyles;
