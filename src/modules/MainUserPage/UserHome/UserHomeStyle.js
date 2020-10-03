@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexGrow: 1,
   },
+  table: {
+    minWidth: 650,
+  },
 }));
 
 export default useStyles;
