@@ -65,9 +65,6 @@ export default function UserHomeView({ rows }) {
               <TableBody>
                 {rows.map((row) => (
                   <TableRow key={row.name}>
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
                     <TableCell align="left">{row.numero}</TableCell>
                     <TableCell> {row.data}</TableCell>
                     <TableCell>{row.nomeDoAmbiente}</TableCell>
