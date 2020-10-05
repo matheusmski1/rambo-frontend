@@ -6,15 +6,14 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
-import {
-  TableContainer,
-  Table,
-  Paper,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody,
-} from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import TableContainer from "@material-ui/core/TableContainer";
+import Table from "@material-ui/core/Table";
+import Paper from "@material-ui/core/Paper";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import TableCell from "@material-ui/core/TableCell";
+import TableBody from "@material-ui/core/TableBody";
 
 export default function UserHomeView({ rows }) {
   const classes = useStyles();
@@ -43,15 +42,17 @@ export default function UserHomeView({ rows }) {
         </Toolbar>
       </AppBar>
       <Container maxWidth="md">
-        <Grid
-          xs={12}
-          justify="center"
-          align="center"
-          style={{ minHeight: "100vh" }}
-        >
-          <Typography variant="h3">
-            <b>Bem-vindo, User.</b>
-          </Typography>
+        <Grid xs={12} style={{ minHeight: "100vh" }}>
+          <Box
+            alignItems="center"
+            justifyContent="center"
+            style={{ minHeight: "20vh", display: "flex" }}
+          >
+            <Typography variant="h3">
+              <b>Bem-vindo, User.</b>
+            </Typography>
+          </Box>
+
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
               <TableHead>

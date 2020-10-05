@@ -1,13 +1,10 @@
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import useStyles from "./RecoveryAuthSuccessStyle";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import { Link } from "react-router-dom";
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 export default function SignUpSuccessView() {
-  const classes = useStyles();
-
   return (
     <Container maxWidth="md">
       <Grid
